@@ -158,6 +158,72 @@ return 10;</code></pre>
           <p class="fragment"><em>"referential transparency"</em></p>
         </section>
         <section>
+          <h2>Liens avec les maths</h2>
+          <p>La notion de fonction est différente.</p>
+          <ul>
+            <li class="fragment">
+              <p>Impossible en maths :</p>
+              <pre><code class="js">// while (true) {}
+(x => x(x))(x => x(x))</code></pre>
+            </li>
+            <li class="fragment">
+              <p>Impossible en λ-calcul :</p>
+              <p>f : ℝ -> ℝ</p>
+              <p>x -> x + 1</p>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>Liens avec les maths</h2>
+          <p>Les fonctions du λ-calcul correspondent aux <em>preuves</em>.</p>
+          <div class="fragment">
+            <table>
+              <tr>
+                <th>Informatique</th>
+                <th>Math</th>
+              </tr>
+              <tr>
+                <td>programme</td>
+                <td>preuve</td>
+              </tr>
+              <tr>
+                <td>type</td>
+                <td>énoncé de théorème</td>
+              </tr>
+              <tr>
+                <td>type produit (tableau, couple, ...)</td>
+                <td>A et B</td>
+              </tr>
+              <tr>
+                <td>type somme (union disjointe)</td>
+                <td>A ou B</td>
+              </tr>
+              <tr>
+                <td>type fonction</td>
+                <td>A implique B</td>
+              </tr>
+              <tr>
+                <td>polymorphisme étendu</td>
+                <td>pour tout <em>x</em> dans <em>E</em>, ...</td>
+              </tr>
+              <tr>
+                <td>type récursifs</td>
+                <td>récurrence</td>
+              </tr>
+            </table>
+          </div>
+        </section>
+        <section>
+          <h2>Normalement</h2>
+          <p>Si on structure son code avec seulement :</p>
+          <ul>
+            <li>type produits</li>
+            <li>type sommes</li>
+            <li>fonctions</li>
+          </ul>
+          <p>tout se passe bien.</p>
+        </section>
+        <section>
           <h1>Merci.</h1>
           <p style="font-size: 40pt; margin-top: 80px;">
             Blog technique :<br />
