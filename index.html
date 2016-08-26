@@ -61,13 +61,20 @@
             <li>fonction : λx.&nbsp;e</li>
             <li>application : <em>f&nbsp;x</em></li>
           </ul>
-          <div class="fragment">
-            <p>En <em>Elm</em> :</p>
-            <ul>
-              <li>fonction : <code>\x -> e</code></li>
-              <li>application : <code>f x</code></li>
-            </ul>
-          </div>
+        </section>
+        <section>
+          <h2>En <em>Elm</em></h2>
+          <ul>
+            <li>fonction : <code>\x -> e</code></li>
+            <li>application : <code>f x</code></li>
+          </ul>
+        </section>
+        <section>
+          <h2>En <em>Java</em></h2>
+          <img
+            alt="Java documentation lambda expressions"
+            src="img/java-lambda.png"
+          />
         </section>
         <section>
           <h2>Exemples</h2>
@@ -103,13 +110,52 @@ x => f => f(f(x)) // 2
 x => f => f(f(f(x))) // 3
 n => x => f => n(f(x))(f) // n => n + 1</code></pre>
           <div class="fragment">
-            <p>Récurrence :</p>
-            <pre><code class="js">(x => x(x))(x => x(x)) // ne termine pas</code></pre>
+            <p>Récurrence / boucles :</p>
+            <pre><code class="js">(x => x(x))(x => x(x)) // while (true) {}</code></pre>
           </div>
         </section>
         <section>
-          <h2>Règle</h2>
-          <p><em>(x => e1)(e2)</em> s'évalue en <em>e1</em> où l'on a substitué <em>x</em> par <em>e2</em></p>
+          <h2>Exemples</h2>
+          <p>Émulateur de PC <em>x86</em> :</p>
+          <pre class="fragment"><code class="js">... // c'est possible</code></pre>
+          <p class="fragment">Le λ-calcul est un langage de programmation complet.</p>
+        </section>
+        <section>
+          <h2>Avantages</h2>
+          <ul>
+            <li>simple pour penser</li>
+            <li>les autres langages fonctionnels sont des extensions<br /> du λ-calcul</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Définition d'une fonction</h2>
+          <p><code class="js">(x => e1)(e2)</code></p>
+          <p>s'évalue en :</p>
+          <p>"<em>e1</em> où l'on a substitué <em>x</em> par <em>e2</em>"</p>
+          <p class="fragment">Définition purement syntaxique.</p>
+        </section>
+        <section>
+          <h2>Exemple</h2>
+          <pre><code class="js">const increment = n => n + 1;
+const double = n => 2 * n;
+return double(increment(4));</code></pre>
+          <div class="fragment">
+            <p>Évaluation à droite :</p>
+            <pre><code class="js">return double(5);
+return 2 * 5;
+return 10;</code></pre>
+          </div>
+          <div class="fragment">
+            <p>Évaluation à gauche :</p>
+            <pre><code class="js">return 2 * increment(4);
+return 2 * 5;
+return 10;</code></pre>
+          </div>
+        </section>
+        <section>
+          <h2>Confluence</h2>
+          <p>On obtient toujours le même résultat quel que soit l'ordre d'évaluation.</p>
+          <p class="fragment"><em>"referential transparency"</em></p>
         </section>
         <section>
           <h1>Merci.</h1>
