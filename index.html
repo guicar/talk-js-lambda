@@ -70,6 +70,48 @@
           </div>
         </section>
         <section>
+          <h2>Exemples</h2>
+          <pre><code class="js">x => x // identité
+x => z // fonction constante
+x => y => x // premier élément
+(x => y => x)(a)(b) // curryfication (donne 'a')
+f => g => x => f(g(x)) // composition</code></pre>
+        </section>
+        <section>
+          <h2>Exemples</h2>
+          <p>Définition de variable :</p>
+          <pre><code class="js">(x => e2)(e1) // const x = e1; return e2;</code></pre>
+          <div class="fragment">
+            <p>Booléens :</p>
+            <pre><code class="js">x => y => x // true
+x => y => y // false
+b(e1)(e2) // b ? e1 : e2</code></pre>
+          </div>
+          <div class="fragment">
+            <p>Couples :</p>
+            <pre><code class="js">f => f(a)(b) // [a, b]
+c(x => y => x) // c[0]
+c(x => y => y) // c[1]</code></pre>
+          </div>
+        </section>
+        <section>
+          <h2>Exemples</h2>
+          <p>Nombres :</p>
+          <pre><code class="js">x => f => x // 0
+x => f => f(x) // 1
+x => f => f(f(x)) // 2
+x => f => f(f(f(x))) // 3
+n => x => f => n(f(x))(f) // n => n + 1</code></pre>
+          <div class="fragment">
+            <p>Récurrence :</p>
+            <pre><code class="js">(x => x(x))(x => x(x)) // ne termine pas</code></pre>
+          </div>
+        </section>
+        <section>
+          <h2>Règle</h2>
+          <p><em>(x => e1)(e2)</em> s'évalue en <em>e1</em> où l'on a substitué <em>x</em> par <em>e2</em></p>
+        </section>
+        <section>
           <h1>Merci.</h1>
           <p style="font-size: 40pt; margin-top: 80px;">
             Blog technique :<br />
